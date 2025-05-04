@@ -1,5 +1,18 @@
+#Prolog Programs for Online "One Compiler"
+3. [max program](#max-implementation)
 4. [Factorial Program](#factorial-implementation)
-### factorial program for one compiler <a name="factorial-implementation"></a>
+###max program <a name="max-implementation"></a>
+```prolog
+:- initialization(main).
+% prolog program to find the maximum of two numbers
+
+max(X,Y) :-
+	X=Y -> write("both are equal");
+	X>Y -> write(X);
+	X<Y -> write(Y).
+main :- max(3,9),nl.
+```
+###factorial program <a name="factorial-implementation"></a>
 
 ```prolog
 :- initialization(main).
