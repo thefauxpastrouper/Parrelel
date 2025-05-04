@@ -1,4 +1,4 @@
-# Factorial Program(#factorial-implementation)
+4. [Factorial Program](#factorial-implementation)
 ### factorial program for one compiler <a name="factorial-implementation"></a>
 
 ```prolog
