@@ -1,9 +1,18 @@
 # Prolog Programs for Online "One Compiler"
 ## Index
-3. [max program](#max-implementation)
-4. [Factorial Program](#factorial-implementation)
+1. [sum program](#sum-implementation)
+2. [max program](#max-implementation)
+3. [Factorial Program](#factorial-implementation)
 
+### sum program <a name="sum-implementation"></a>
+```prolog
+:- initialization(main).
+% Prolog program to calculate the sum of two numbers
 
+sum(X,Y) :- S is X+Y,write(S).
+
+main :- sum(3,9),nl.
+```
 ### max program <a name="max-implementation"></a>
 ```prolog
 :- initialization(main).
