@@ -1,18 +1,15 @@
 # Prolog Programs for Online "One Compiler"
-## Index
-1. [Write a PROLOG program to implement the family tree and demonstrate the family
-relationship.](#family-implementation)
-2. [Write a PROLOG program to implement conc(L1, L2, L3) where L2 is the list to be
-appended with L1 to get the resulted list L3.](#concat-implementation)
-3. [Write a PROLOG program to implement reverse(L, R) where List L is original and List
-R is reversed list.](#reverse-implementation)
-4. [Write a PROLOG program to calculate the sum of two numbers.](#sum-implementation)
-5. [max program](#max-implementation)
-6. [Factorial Program](#factorial-implementation)
-7. [nth Fibonacci Number](#fibonacci-implementation)
 
-1. Write a PROLOG program to implement the family tree and demonstrate the family
-relationship.<a name="family-implementation"></a>
+## Index
+1. [Write a PROLOG program to implement the family tree and demonstrate the family relationship.](#family-implementation)
+2. [Write a PROLOG program to implement conc(L1, L2, L3) where L2 is the list to be appended with L1 to get the resulted list L3.](#concat-implementation)
+3. [Write a PROLOG program to implement reverse(L, R) where List L is original and List R is reversed list.](#reverse-implementation)
+4. [Write a PROLOG program to calculate the sum of two numbers.](#sum-implementation)
+5. [Write a PROLOG program to implement max(X, Y, M) so that M is the maximum of two numbers X and Y.](#max-implementation)
+6. [Write a program in PROLOG to implement factorial (N, F) where F represents the factorial of a number N.](#factorial-implementation)
+7. [Write a program in PROLOG to implement generate_fib(N,T) where T represents the Nth term of the Fibonacci series.](#fibonacci-implementation)
+
+### 1. Write a PROLOG program to implement the family tree and demonstrate the family relationship.<a name="family-implementation"></a>
 ```prolog
 :- initialization(main).
 % Define genders
@@ -107,8 +104,7 @@ main :-
     write('--- End of Demonstration ---'), nl.
 
 ```
-2. Write a PROLOG program to implement conc(L1, L2, L3) where L2 is the list to be
-appended with L1 to get the resulted list L3.<a name="concat-implementation"></a>
+### 2. Write a PROLOG program to implement conc(L1, L2, L3) where L2 is the list to be appended with L1 to get the resulted list L3.<a name="concat-implementation"></a>
 ```prolog
 :- initialization(main).
 % conc(L1, L2, L3)
@@ -127,8 +123,7 @@ main :-
     write('List2: '), write(List2), nl,
     write('Concatenated List: '), write(Result), nl.
 ```
-3. Write a PROLOG program to implement reverse(L, R) where List L is original and List
-R is reversed list.<a name="reverse-implementation"></a>
+### 3. Write a PROLOG program to implement reverse(L, R) where List L is original and List R is reversed list.<a name="reverse-implementation"></a>
 ```prolog
 :- initialization(main).
 
@@ -153,7 +148,7 @@ main :-
     write('Original List: '), write(InputList), nl,
     write('Reversed List: '), write(ReversedList), nl.
 ```
-### Write a PROLOG program to calculate the sum of two numbers.<a name="sum-implementation"></a>
+### 4. Write a PROLOG program to calculate the sum of two numbers.<a name="sum-implementation"></a>
 ```prolog
 :- initialization(main).
 % Prolog program to calculate the sum of two numbers
@@ -162,18 +157,24 @@ sum(X,Y) :- S is X+Y,write(S).
 
 main :- sum(3,9),nl.
 ```
-### max program <a name="max-implementation"></a>
+### 5. Write a PROLOG program to implement max(X, Y, M) so that M is the maximum of two numbers X and Y.<a name="max-implementation"></a>
 ```prolog
 :- initialization(main).
-% prolog program to find the maximum of two numbers
 
-max(X,Y) :-
-	X=Y -> write("both are equal");
-	X>Y -> write(X);
-	X<Y -> write(Y).
-main :- max(3,9),nl.
+% max(X, Y, M) succeeds if M is the maximum of X and Y
+max(X, Y, X) :- X >= Y.
+max(X, Y, Y) :- X < Y.
+
+% Main predicate to demonstrate the max/3 predicate
+main :-
+    X = 5,
+    Y = 8,
+    max(X, Y, M),
+    write('The maximum of '), write(X), write(' and '), write(Y),
+    write(' is '), write(M), nl.
+
 ```
-### factorial program <a name="factorial-implementation"></a>
+### 6. Write a program in PROLOG to implement factorial (N, F) where F represents the factorial of a number N. <a name="factorial-implementation"></a>
 
 ```prolog
 :- initialization(main).
@@ -201,8 +202,10 @@ main :-
     ).
 ```
 
-### fibonacci program <a name="fibonacci-implementation"></a>
+### 7. Write a program in PROLOG to implement generate_fib(N,T) where T represents the Nth term of the Fibonacci series. <a name="fibonacci-implementation"></a>
 ```prolog
+:- initialization(main).
+
 % Base cases
 fib(0, 0).
 fib(1, 1).
@@ -221,5 +224,4 @@ main :-
     fib(10, F),
     write('The 10th Fibonacci number is: '),
     write(F), nl.
-
 ```
