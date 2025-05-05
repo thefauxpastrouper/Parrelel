@@ -278,7 +278,7 @@ main :-
     write(' is '), write(R), nl.
 
 ```
-10. Write a PROLOG program to implement memb(X, L): to check whether X is a member of L or not.<a name="memb-implementation"></a>
+### 10. Write a PROLOG program to implement memb(X, L): to check whether X is a member of L or not.<a name="memb-implementation"></a>
 ```prolog
 ```prolog
 :- initialization(main).
@@ -298,7 +298,7 @@ main :-
     \+ memb(grape, List),
     write('grape is not a member of the list.'), nl.
 ```
-11. Write a PROLOG program to implement sumlist(L, S) so that S is the sum of a given list L.<a name="sumlist-implementation"></a>
+### 11. Write a PROLOG program to implement sumlist(L, S) so that S is the sum of a given list L.<a name="sumlist-implementation"></a>
 ```prolog
 :- initialization(main).
 
@@ -318,7 +318,7 @@ main :-
     write(S), nl.
 ```
 
-12. Write a PROLOG program to implement two predicates evenlength(List) and oddlength(List) so that they are true if their argument is a list of even or odd length respectively.<a name="predicate-implementation"></a>
+### 12. Write a PROLOG program to implement two predicates evenlength(List) and oddlength(List) so that they are true if their argument is a list of even or odd length respectively.<a name="predicate-implementation"></a>
 ```prolog
 :- initialization(main).
 
@@ -343,7 +343,7 @@ main :-
         write('List2 has odd length.'), nl ;
         write('List2 does not have odd length.'), nl).
 ```
-13. Write a PROLOG program to implement maxlist(L, M) so that M is the maximum number in the list. <a name="maxlist-implementation"></a>
+### 13. Write a PROLOG program to implement maxlist(L, M) so that M is the maximum number in the list. <a name="maxlist-implementation"></a>
 ```prolog
 :- initialization(main).
 
@@ -384,5 +384,21 @@ main :-
 ```
 ### 15. Write a PROLOG program to implement delete(N, L, R) that removes the element on Nth position from a list L to generate a list R. <a name="delete-implementation"></a>
 ```prolog
+% delete_nth(N, L, R): Remove the element at position N from list L to get list R.
 
+% Base case: Removing the first element
+delete_nth(1, [_|T], T).
+
+% Recursive case: Traverse the list until the Nth position
+delete_nth(N, [H|T], [H|R]) :-
+    N > 1,
+    N1 is N - 1,
+    delete_nth(N1, T, R).
+
+% Main predicate to demonstrate delete_nth/3
+main :-
+    List = [a, b, c, d, e],
+    delete_nth(3, List, Result),
+    write('Original List: '), write(List), nl,
+    write('After deleting element at position 3: '), write(Result), nl.
 ```
