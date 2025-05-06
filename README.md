@@ -280,7 +280,6 @@ main :-
 ```
 ### 10. Write a PROLOG program to implement memb(X, L): to check whether X is a member of L or not.<a name="memb-implementation"></a>
 ```prolog
-```prolog
 :- initialization(main).
 
 % Base case: X is a member of a list if X is the head of the list
@@ -384,6 +383,7 @@ main :-
 ```
 ### 15. Write a PROLOG program to implement delete(N, L, R) that removes the element on Nth position from a list L to generate a list R. <a name="delete-implementation"></a>
 ```prolog
+:- initialization(main).
 % delete_nth(N, L, R): Remove the element at position N from list L to get list R.
 
 % Base case: Removing the first element
